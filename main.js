@@ -1,22 +1,45 @@
-console.log("Connected!")
-// YOU WILL MODIFY THIS FUNCTION TO GET THE PROGRAM TO WORK
+// // YOU WILL MODIFY THIS FUNCTION TO GET THE PROGRAM TO WORK
+// const wordCounter = (value) => {
+//   // Type into the input and press submit, you will see the value you entered in your console
+//   console.log(value);
+
+//   if (value) {
+//     // COMPLETE THE LOGIC 
+//     wordCount.innerHTML = `Word Count: 0`; 
+//   } else {
+//     // if the value is empty, set the error message value to "Please input text"
+//     error.innerHTML = "Please input text"; // UPDATE THIS
+//   }
+// }
+
 const wordCounter = (value) => {
-  // Type into the input and press submit, you will see the value you entered in your console
   console.log(value);
 
+  // Remove leading/trailing white spaces and split the string into an array of words
+  const wordsArray = value.trim().split(/\s+/);
+
   if (value) {
-    // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    // Display the number of words in the array
+    wordCount.innerHTML = `Word Count: ${wordsArray.length}`;
   } else {
-    // if the value is empty, set the error message value to "Please input text"
-    error.innerHTML = ""; // UPDATE THIS
+    // If the value is empty, set the error message value to "Please input text"
+    error.innerHTML = "Please input text";
   }
 }
 
 // OPTIONAL CHALLENGE
-const toggleMode = (btnText) => {
+// const toggleMode = (btnText) => {
   // complete the function
-}
+  const toggleMode = (btnText) => {
+    const body = document.body;
+    if (body.classList.contains('dark-mode')) {
+      body.classList.remove('dark-mode');
+      btnText.textContent = 'Dark Mode';
+    } else {
+      body.classList.add('dark-mode');
+      btnText.textContent = 'Light Mode';
+    }
+  }
 
 // ************************************************ //
 // **** DO NOT MODIFY THE CODE BELOW THIS LINE **** //
