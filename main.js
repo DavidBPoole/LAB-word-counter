@@ -12,31 +12,6 @@
 //   }
 // }
 
-// ChatGPT:
-// const wordCounter = (value) => {
-//   // select the HTML elements for displaying the word count and error message
-//   const wordCount = document.querySelector('#word-count');
-//   const error = document.querySelector('#error');
-
-//   // display the input value in the console
-//   console.log(value);
-
-//   if (value) {
-//     // count the number of words in the input value
-//     const words = value.trim().split(/\s+/);
-//     const count = words.length;
-
-//     // display the word count on the page
-//     // wordCount.innerHTML = `Word Count: ${count}`;
-//     wordCount.innerHTML = `Word Count: 0`; 
-//     error.innerHTML = ""; // clear any previous error message
-//   } else {
-//     // display an error message if the input is empty
-//     error.innerHTML = "Please input text";
-//     wordCount.innerHTML = ""; // clear the word count
-//   }
-// };
-
 const wordCounter = (value) => {
   console.log(value);
 
@@ -53,9 +28,18 @@ const wordCounter = (value) => {
 }
 
 // OPTIONAL CHALLENGE
-const toggleMode = (btnText) => {
+// const toggleMode = (btnText) => {
   // complete the function
-}
+  const toggleMode = (btnText) => {
+    const body = document.body;
+    if (body.classList.contains('dark-mode')) {
+      body.classList.remove('dark-mode');
+      btnText.textContent = 'Dark Mode';
+    } else {
+      body.classList.add('dark-mode');
+      btnText.textContent = 'Light Mode';
+    }
+  }
 
 // ************************************************ //
 // **** DO NOT MODIFY THE CODE BELOW THIS LINE **** //
